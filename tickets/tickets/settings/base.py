@@ -138,7 +138,7 @@ CORS_ALOWED_ORIGINS = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    'localhost:80'
+    'http://localhost:3000'
 ]
 
 SIMPLE_JWT={

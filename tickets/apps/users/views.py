@@ -29,6 +29,7 @@ class Login(TokenObtainPairView):
                 },status = status.HTTP_200_OK)
             else:
                 return Response({'error':'Contraseña o Usuario Incorrectos'},status.HTTP_400_BAD_REQUEST)
+        else: return Response({'error':'Contraseña o Usuario Incorrectos'},status=status.HTTP_401_UNAUTHORIZED)
 class Logout(GenericAPIView):
     def post(self,request,*args,**kwargs):
         user = User.objects.filter(id=request.data.get('user',))
