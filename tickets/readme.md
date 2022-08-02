@@ -96,13 +96,6 @@ $ python manage.py createsuperuser
 Finalmente corremos el servidor con
 $ python manage.py runserver
 ```
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
-```
 
 ### Para la documentación añadida del proyecto una vez corriendo dirigirse a la dirección local en la que esté corriendo el servidor /docu, ej:http://127.0.0.1:8000/docu/ 
 
@@ -113,45 +106,16 @@ para detalles sobre modelos creados con el ORM de DRF dirigirse a la carpeta app
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
 
-* [Django Rest Frameowrk](Oficial:https://www.django-rest-framework.org
-external: https://www.cdrf.co) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+* [Django Rest Frameowrk oficial](https://www.django-rest-framework.org) - Api rest
+* [Django Rest Frameowrk external](https://www.cdrf.co)Api rest docu extraoficial
+* [Simple jwt](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/) - generador de jwt
+* [Django 4.0.6](https://docs.djangoproject.com/en/4.0/) - Core Framework django
+* [django-simple-history](django-simple-history.readthedocs.io/en/latest/) - Registros historicos en bd
+* [django-cors-headers](https://pypi.org/project/django-cors-headers/) - Manejador para CORS refrente a los headers enviados en las requests
 
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
-
-## Autoresa ✒️
-
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
-* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
-
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
 
 ## Expresiones de Gratitud 🎁
 
-* Comenta a otros sobre este proyecto 📢
 * Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* Dona con cripto a esta dirección: `0xf253fc233333078436d111175e5a76a649890000`
-* etc.
-
-
-
 ---
-⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
+⌨️ con ❤️ por [Pududev](https://github.com/kornbyteapps) 😊
