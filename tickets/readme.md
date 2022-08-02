@@ -13,32 +13,89 @@ git clone https://github.com/kornbyteapps/proyectowarpro.git
 
 _Para iniciar es necesario instalar la versión 3.9.13 de Python con Version Pip 22.2_
 
-```
-para instalar dependencias: pip install requirementes.txt
-```
+_Crear un entorno virtual para posteriormente activarlo _
 
-### Instalación 🔧
-
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
-
-```
-Da un ejemplo
+``` python
+$ python -m venv nombre_entorno
+luego $ .\env\Scripts\activate
 ```
 
-_Y repite_
+```
+para instalar dependencias: 
+$ pip install requirementes.txt
+```
+
+### Puesta a punto 🔧
+
+_Una vez instalado lo anterior debemos proceder a configurar dentro del proyecto la base de datos que tengamos destinada para este fin_
+
+-DEVELOP: Para iniciar el proyecto en develop debemos modificar el archivo LOCAL dentro de la carpeta Settings y añadir
+los datos propios de nuestra base de datos_
+``` python
+  DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'hostname',
+        'PORT': 'puerto',
+        'USER':'usuario',
+        'PASSWORD':'password',
+        'NAME':'name_db',
+        'OPTIONS':{
+            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
+        }
+    }
+}
+```
+_Adicional añadir los hosts permnitidos para las requests en_
+``` python
+ALLOWED_HOSTS = ['examplelocalhost:8800']
 
 ```
-hasta finalizar
+_PRODUCTION: para iniciar el proyecto en producción debemos realizar el procedimiento anterior pero para el archivo PRODUCTION.PY dentro de la carpeta Settings_
+_Es necesario ademas realizar cambios a los archivos Settings/base.py, wsgi.py, asgi.py ,manage.py
+```python
+En manage.py : os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tickets.settings.production)linea 9
+
+En wsgi.py :os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tickets.settings.production)linea 14
+
+En asgi.py :os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tickets.settings.production)linea 14
+
 ```
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+_Para el archivo Base modificar_
 
-## Ejecutando las pruebas ⚙️
+```python
+ALLOWED_HOSTS = ['examplelocalhost:8800']
+y pasar DEBUG = True a DEBUG = False
 
-_Explica como ejecutar las pruebas automatizadas para este sistema_
+Setear adicionalmente el tiempo de vida para los tokens JWT use y refresh 
+SIMPLE_JWT={
+    'ACCES_TOKEN_LIFETIME':timedelta(hours=120),
+    'REFRESH_TOKEN_LIFETIME':timedelta(hours=120),
+    'ROTATE_REFRESH_TOKENS':True,
+    'BLACKLIST_AFTER_ROTATION':True
 
+}
+```
+
+_Una vez configurado lo anterior, procederemos a ejecutar las migraciones correspondientes de la siguiente forma_
+
+## Para las migraciones ⚙️
+
+_En la consola y dentro de la carpeta principal del proyecto ejecutar_
+
+```
+$ python manage.py makemigrations
+
+luego
+$ python manage.py migrate
+
+Creamos un super usuario con
+$ python manage.py createsuperuser
+
+Finalmente corremos el servidor con
+$ python manage.py runserver
+```
 ### Analice las pruebas end-to-end 🔩
 
 _Explica que verifican estas pruebas y por qué_
@@ -47,23 +104,17 @@ _Explica que verifican estas pruebas y por qué_
 Da un ejemplo
 ```
 
-### Y las pruebas de estilo de codificación ⌨️
+### Para la documentación añadida del proyecto una vez corriendo dirigirse a la dirección local en la que esté corriendo el servidor /docu, ej:http://127.0.0.1:8000/docu/ 
 
-_Explica que verifican estas pruebas y por qué_
+para detalles sobre modelos creados con el ORM de DRF dirigirse a la carpeta apps/nombreapp/models.py⌨️
 
-```
-Da un ejemplo
-```
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
 
 ## Construido con 🛠️
 
 _Menciona las herramientas que utilizaste para crear tu proyecto_
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
+* [Django Rest Frameowrk](Oficial:https://www.django-rest-framework.org
+external: https://www.cdrf.co) - El framework web usado
 * [Maven](https://maven.apache.org/) - Manejador de dependencias
 * [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
 
