@@ -104,7 +104,7 @@ para detalles sobre modelos creados con el ORM de DRF dirigirse a la carpeta app
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+_Herramientas principales:_
 
 * [Django Rest Frameowrk oficial](https://www.django-rest-framework.org) - Api rest
 * [Django Rest Frameowrk external](https://www.cdrf.co)Api rest docu extraoficial
