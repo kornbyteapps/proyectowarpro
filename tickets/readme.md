@@ -4,17 +4,17 @@ _Sistema de manejo de usuarios y tickets mediante APIREST en DJANGO REST FRAMEWO
 
 ## Clonar proyecto 🚀
 
-_Para clonar el proyecto: _
+_Para clonar el proyecto:_
 ```
-https://github.com/kornbyteapps/proyectowarpro.git
+git clone https://github.com/kornbyteapps/proyectowarpro.git
 ```
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+_Para iniciar es necesario instalar la versión 3.9.13 de Python con Version Pip 22.2_
 
 ```
-Da un ejemplo
+para instalar dependencias: pip install requirementes.txt
 ```
 
 ### Instalación 🔧
