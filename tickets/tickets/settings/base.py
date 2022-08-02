@@ -17,7 +17,7 @@ SECRET_KEY = 'django-insecure-(m$23o+ry$aerd-p@f3er6@r++*zrv9y3da6l^v*)cgt2hl8*q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -49,15 +49,12 @@ THIRD_APPS = [
 
 INSTALLED_APPS =  BASE_APPS+LOCAL_APPS+THIRD_APPS
 
-TOKEN_EXPIRED_AFTER_SECONDS = 9999
 
 REST_FRAMEWORK= {
     'DEFAULT_AUTHENTICATION_CLASSES':[
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ]
+    
 }
 
 
@@ -134,18 +131,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
 
 CORS_ALOWED_ORIGINS = [
-    'localhost:80'
+    'localhost:80',
+    'http://localhost'
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000'
+    'http://localhost:3000',
+    'http://localhost'
 ]
 
 SIMPLE_JWT={
-    'ACCES_TOKEN_LIFETIME':timedelta(minutes=5),
-    'REFRESH_TOKEN_LIFETIME':timedelta(),
+    'ACCES_TOKEN_LIFETIME':timedelta(hours=120),
+    'REFRESH_TOKEN_LIFETIME':timedelta(hours=120),
     'ROTATE_REFRESH_TOKENS':True,
     'BLACKLIST_AFTER_ROTATION':True
 
 }
-
+SWAGGER_SETTINGS = {
+    'DOC_EXPANSION': 'none'
+}

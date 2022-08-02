@@ -12,7 +12,7 @@ DATABASES = {
         'PORT': '3306',
         'USER':'root',
         'PASSWORD':'root',
-        'NAME':'tickets_db',
+        'NAME':'wp_tickets_db',
         'OPTIONS':{
             'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
         }
