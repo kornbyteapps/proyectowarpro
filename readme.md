@@ -106,6 +106,7 @@ para detalles sobre modelos creados con el ORM de DRF dirigirse a la carpeta app
 
 _Herramientas principales:_
 
+* [Python 3.9.13](https://www.python.org) - Version python
 * [Django Rest Frameowrk oficial](https://www.django-rest-framework.org) - Api rest
 * [Django Rest Frameowrk external](https://www.cdrf.co)Api rest docu extraoficial
 * [Simple jwt](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/) - generador de jwt
